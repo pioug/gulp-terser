@@ -1,0 +1,9 @@
+on: push
+name: Run tests
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - run: npm ci
+      - run: npm test
