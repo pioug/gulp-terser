@@ -5,8 +5,8 @@ const terser = require("terser");
 const PluginError = require("plugin-error");
 const applySourceMap = require("vinyl-sourcemaps-apply");
 
-module.exports = function(options = {}) {
-  return through2.obj(function(file, enc, callback) {
+module.exports = function (options = {}) {
+  return through2.obj(function (file, enc, callback) {
     if (file.isNull()) {
       callback(null, file);
       return;

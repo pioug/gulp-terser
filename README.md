@@ -15,11 +15,11 @@ const terser = require("gulp-terser");
 const terserOptions = {
   compress: {
     drop_console: true,
-    passes: 2
+    passes: 2,
   },
   output: {
-    comments: false
-  }
+    comments: false,
+  },
 };
 
 gulp

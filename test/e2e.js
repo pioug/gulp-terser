@@ -4,8 +4,8 @@ import terser from "../index.js";
 import test from "ava";
 import { readFileSync } from "fs";
 
-test("Ensure output are minified with source maps", async function(t) {
-  await new Promise(function(resolve) {
+test("Ensure output are minified with source maps", async function (t) {
+  await new Promise(function (resolve) {
     gulp
       .src("test/inputs/*.js")
       .pipe(sourcemaps.init())
