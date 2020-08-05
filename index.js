@@ -6,7 +6,7 @@ const PluginError = require("plugin-error");
 const applySourceMap = require("vinyl-sourcemaps-apply");
 
 module.exports = function (options = {}) {
-  return through2.obj(function (file, enc, callback) {
+  return through2.obj(async function (file, enc, callback) {
     if (file.isNull()) {
       callback(null, file);
       return;
@@ -30,7 +30,7 @@ module.exports = function (options = {}) {
           ? { [file.sourceMap.file]: source }
           : source;
 
-      const { error, code, map } = terser.minify(build, o);
+      const { error, code, map } = await terser.minify(build, o);
 
       if (error) {
         console.log(error.message);
