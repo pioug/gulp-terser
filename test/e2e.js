@@ -1,10 +1,11 @@
-import gulp from "gulp";
-import sourcemaps from "gulp-sourcemaps";
-import terser from "../index.js";
-import test from "ava";
-import { readFileSync } from "fs";
+const assert = require("node:assert/strict");
+const gulp = require("gulp");
+const sourcemaps = require("gulp-sourcemaps");
+const terser = require("../index.js");
+const test = require("node:test");
+const { readFileSync } = require("fs");
 
-test("Ensure output are minified with source maps", async function (t) {
+test("Ensure output are minified with source maps", async function () {
   await new Promise(function (resolve) {
     gulp
       .src("test/inputs/*.js")
@@ -17,9 +18,9 @@ test("Ensure output are minified with source maps", async function (t) {
 
   const script = readFileSync("test/tmp/example.js");
   const expectedScript = readFileSync("test/outputs/example.js");
-  t.is(Buffer.compare(script, expectedScript), 0);
+  assert.strictEqual(Buffer.compare(script, expectedScript), 0);
 
   const map = readFileSync("test/tmp/example.js.map");
   const expectedSourcemaps = readFileSync("test/outputs/example.js.map");
-  t.is(Buffer.compare(map, expectedSourcemaps), 0);
+  assert.strictEqual(Buffer.compare(map, expectedSourcemaps), 0);
 });

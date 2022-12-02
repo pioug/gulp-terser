@@ -6,7 +6,7 @@
   "author": "Gilles Piou <gilles.piou@gmail.com> (https://www.github.com/pioug)",
   "main": "index.js",
   "scripts": {
-    "test": "ava --verbose test/e2e.js"
+    "test": "node test/e2e.js"
   },
   "dependencies": {
     "plugin-error": "^1.0.1",
@@ -15,19 +15,12 @@
     "vinyl-sourcemaps-apply": "^0.2.1"
   },
   "devDependencies": {
-    "ava": "3.11.1",
     "eslint": "7.6.0",
-    "esm": "3.2.25",
     "gulp": "4.0.2",
     "gulp-sourcemaps": "2.6.5",
     "prettier": "2.0.5"
   },
   "engines": {
     "node": ">=18.0.0"
-  },
-  "ava": {
-    "require": [
-      "esm"
-    ]
   }
 }
