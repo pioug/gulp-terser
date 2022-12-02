@@ -1,6 +1,6 @@
 {
   "description": "Gulp plugin to use Terser",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "name": "gulp-terser",
   "license": "MIT",
   "author": "Gilles Piou <gilles.piou@gmail.com> (https://www.github.com/pioug)",
