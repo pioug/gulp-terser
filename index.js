@@ -1,12 +1,13 @@
 "use strict";
 
-const through2 = require("through2");
+const { Transform } = require("node:stream");
 const terser = require("terser");
 const PluginError = require("plugin-error");
 const applySourceMap = require("vinyl-sourcemaps-apply");
 
 module.exports = function (options = {}) {
-  return through2.obj(async function (file, enc, callback) {
+  const stream = new Transform({ objectMode: true });
+  stream._transform = async function (file, enc, callback) {
     if (file.isNull()) {
       callback(null, file);
       return;
@@ -47,5 +48,6 @@ module.exports = function (options = {}) {
       this.push(file);
       callback();
     }
-  });
+  };
+  return stream;
 };
