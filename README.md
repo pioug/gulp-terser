@@ -3,7 +3,7 @@
 ## Install
 
 ```sh
-$ npm install github:pioug/gulp-terser#2.0.0
+$ npm install github:pioug/gulp-terser#3.0.0
 ```
 
 ### Example
