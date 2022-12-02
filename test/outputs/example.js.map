@@ -1,1 +1,1 @@
-{"version":3,"sources":["example.js"],"names":["f","long_parameter_name"],"mappings":"AAAA,aAEA,MAAMA,EAAKC,GAAwBA,GAAuB,EAE1DD,EAAE","file":"example.js","sourcesContent":["\"use strict\";\n\nconst f = (long_parameter_name) => long_parameter_name ** 2;\n\nf(2);\n"]}
+{"version":3,"file":"example.js","names":["f","long_parameter_name"],"sources":["example.js"],"mappings":"AAAA,aAEA,MAAMA,EAAKC,GAAwBA,GAAuB,EAE1DD,EAAE","sourcesContent":["\"use strict\";\n\nconst f = (long_parameter_name) => long_parameter_name ** 2;\n\nf(2);\n"]}
